@@ -1,4 +1,5 @@
-﻿using NarrativeProject.Rooms;
+﻿using NarrativeProject.Floors.Floor1;
+using NarrativeProject.Floors;
 using System;
 
 namespace NarrativeProject
