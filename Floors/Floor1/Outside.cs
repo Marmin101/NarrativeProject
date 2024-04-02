@@ -1,13 +1,12 @@
 ﻿using System;
 
-namespace NarrativeProject.Rooms
+namespace NarrativeProject.Floors.Floor1
 {
-    internal class LivingRoom : Room
+    internal class Outside : Room
     {
 
         internal override string CreateDescription() =>
-@"In the living room, you see a [couch].
-Behind you, there is your [bedroom].
+@"You are outside.
 ";
 
         internal override void ReceiveChoice(string choice)
@@ -16,7 +15,7 @@ Behind you, there is your [bedroom].
             {
                 case "bedroom":
                     Console.WriteLine("You return to your bedroom.");
-                    Game.Transition<Bedroom>();
+                    Game.Transition<Lobby>();
                     break;
                 case "couch":
                     Console.WriteLine("You sit on the couch and fall asleep.");

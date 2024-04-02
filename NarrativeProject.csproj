@@ -47,10 +47,10 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Room.cs" />
-    <Compile Include="Rooms\AtticRoom.cs" />
-    <Compile Include="Rooms\Bathroom.cs" />
-    <Compile Include="Rooms\Bedroom.cs" />
-    <Compile Include="Rooms\LivingRoom.cs" />
+    <Compile Include="Floors\Floor1\SecurityCloset.cs" />
+    <Compile Include="Floors\Floor1\Elevator.cs" />
+    <Compile Include="Floors\Floor1\Lobby.cs" />
+    <Compile Include="Floors\Floor1\Outside.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
