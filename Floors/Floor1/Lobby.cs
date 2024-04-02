@@ -17,13 +17,22 @@ Behind you, there is the front door leading [outside].
             switch (choice)
             {
                 case "outside":
-                    Console.WriteLine("You approach the door to the outside.");
-                    Game.Transition<Outside>();
+                    // must collect key to outside to escape the hotel. key location tbd, somewhere on floor 6.
+                    if (true /*key to outside is not collected*/)
+                    {
+                        Console.WriteLine("The door to go outside is locked. Maybe there's a key somewhere in this building to open it?");
+                    }
+                    else
+                    {
+                        Console.WriteLine("You insert the key and twist. The door unlocks, you step outside.");
+                        Game.Transition<Outside>();
+                    }
                     break;
                 case "door":
-                    if (!SecurityCloset.isKeyCollected)
+                    if (!FrontDesk.securityKeyTaken) // if the security key is not collected
                     {
-                        Console.WriteLine("The door is locked.");
+                        Console.WriteLine("You approach the front desk and try opening the door behind it, but it is locked.");
+                        Game.Transition<FrontDesk>();
                     }
                     else
                     {

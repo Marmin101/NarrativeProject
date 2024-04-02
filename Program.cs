@@ -13,6 +13,7 @@ namespace NarrativeProject
             game.Add(new Elevator());
             game.Add(new SecurityCloset());
             game.Add(new Outside());
+            game.Add(new FrontDesk());
 
             while (!game.IsGameOver())
             {
