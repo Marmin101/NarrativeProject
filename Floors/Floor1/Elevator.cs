@@ -9,24 +9,16 @@ namespace NarrativeProject.Floors.Floor1
 @"In the elevator, you see an array of floor levels 1 to 6.
 Which floor will you visit?
 ";
-        internal static bool bathTaken;
+        internal static bool outsideKeyTaken;
         internal override void ReceiveChoice(string choice)
         {
             switch (choice)
             {
                 case "1":
                     Console.WriteLine("You return to the lobby.");
-                    bathTaken = true;
+                    Game.Transition<Lobby>();
                     break;
                 case "2":
-                    if (!bathTaken)
-                    {
-                        Console.WriteLine("You see your greasy hair and want to take a bath.");
-                    }
-                    else
-                    {
-                        Console.WriteLine("You see the numbers 6969 written on the fog on your mirror.");
-                    }
                     break;
                 case "3":
                     Console.WriteLine("You return to your bedroom.");

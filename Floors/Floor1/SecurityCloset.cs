@@ -10,7 +10,7 @@ namespace NarrativeProject.Floors.Floor1
 @"You are in the Security Closet.
 Behind you, there is the [lobby].
 You see a [desk] with stuff on it.
-"; // desk has keycard for elevator
+";
 
         internal override void ReceiveChoice(string choice)
         {
@@ -21,18 +21,14 @@ You see a [desk] with stuff on it.
                     Game.Transition<Lobby>();
                     break;
                 case "desk":
-                    Console.WriteLine("The desk has a [clipboard], a [sticky note], and a [computer].");
-
-                    isKeyCollected = true;
-
-                    switch (choice)
+                    if (!isKeyCollected)
                     {
-                        case "clipboard":
-                            break;
-                        case "sticky note":
-                            break;
-                        case "computer":
-                            break;
+                    Console.WriteLine("On the desk, you see a keycard. You decide to take it.");
+                    isKeyCollected = true;
+                    }
+                    else
+                    {
+                        Console.WriteLine("There is nothing on the desk.");
                     }
                     break;
                 default:
@@ -40,5 +36,6 @@ You see a [desk] with stuff on it.
                     break;
             }
         }
+
     }
 }
