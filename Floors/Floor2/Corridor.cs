@@ -8,7 +8,7 @@ namespace NarrativeProject.Floors.Floor2
 @"You are on Floor 2 in a narrow, yet long, corridor.
 Right behind you, there is the [elevator].
 
-On the wall there is a [poster], but it is too far to read. // under the poster theres a table with a phone that when u call it it plays a voicemail with a room number
+On the wall there is a [poster], but it is too far to read. Beneath it, you see a small table with a [telephone].
 
 You see a door to your [left] and a door to your [right].
 ";
@@ -22,12 +22,12 @@ You see a door to your [left] and a door to your [right].
                     Game.Transition<Elevator2>();
                     break;
                 case "poster":
-                    Console.WriteLine
-                    (@"You walk up to the poster and read it. 
-                    It displays an image of an oak tree with a clear blue sky behind it and green grass at its roots.
-                    At the bottom of the poster, it is written [random number].
-
-                    Beneath the poster and against the wall, you find a small table with a [telephone] on it.");
+                    Console.WriteLine("You walk up to the poster and read it.");
+                    Game.Transition<Poster>();
+                    break;
+                case "telephone":
+                    Console.WriteLine("You walk up to the phone, you pick it up, and hear the dial tone.");
+                    Game.Transition<Telephone>();
                     break;
                 case "left":
                     break;

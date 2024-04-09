@@ -2,7 +2,7 @@
 
 namespace NarrativeProject.Floors.Floor1
 {
-    internal class Corridor : Room
+    internal class SecurityCloset : Room
     {
         internal static bool isKeyCollected;
 

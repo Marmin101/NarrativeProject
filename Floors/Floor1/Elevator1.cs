@@ -20,7 +20,7 @@ Which floor will you visit? (You are on floor 1)
                     break;
                 case "2":
                     Console.WriteLine("You enter the second floor.");
-                    Game.Transition<Lobby>();
+                    Game.Transition<Floor2.Corridor>();
                     break;
                 default:
                     Console.WriteLine("Invalid command.");
