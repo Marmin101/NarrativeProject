@@ -2,14 +2,14 @@
 
 namespace NarrativeProject.Floors.Floor1
 {
-    internal class Elevator : Room
+    internal class Elevator1 : Room
     {
 
         internal override string CreateDescription() =>
-@"In the elevator, you see an array of floor levels 1 to 6.
-Which floor will you visit?
+@"In the elevator, there are buttons to visit floor [1] and floor [2].
+Which floor will you visit? (You are on floor 1)
 ";
-        internal static bool outsideKeyTaken;
+        internal static bool outsideKeyTaken; // Temporary variable to store if the key was taken from the outside
         internal override void ReceiveChoice(string choice)
         {
             switch (choice)
@@ -19,16 +19,8 @@ Which floor will you visit?
                     Game.Transition<Lobby>();
                     break;
                 case "2":
-                    break;
-                case "3":
-                    Console.WriteLine("You return to your bedroom.");
+                    Console.WriteLine("You enter the second floor.");
                     Game.Transition<Lobby>();
-                    break;
-                case "4":
-                    break;
-                case "5":
-                    break;
-                case "6":
                     break;
                 default:
                     Console.WriteLine("Invalid command.");

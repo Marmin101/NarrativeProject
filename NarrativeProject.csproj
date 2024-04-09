@@ -44,12 +44,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Floors\Floor1\FrontDesk.cs" />
+    <Compile Include="Floors\Floor2\Corridor.cs" />
+    <Compile Include="Floors\Floor2\Elevator2.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Room.cs" />
     <Compile Include="Floors\Floor1\SecurityCloset.cs" />
-    <Compile Include="Floors\Floor1\Elevator.cs" />
+    <Compile Include="Floors\Floor1\Elevator1.cs" />
     <Compile Include="Floors\Floor1\Lobby.cs" />
     <Compile Include="Floors\Floor1\Outside.cs" />
   </ItemGroup>

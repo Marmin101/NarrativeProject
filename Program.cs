@@ -1,4 +1,5 @@
 ﻿using NarrativeProject.Floors.Floor1;
+using NarrativeProject.Floors.Floor2;
 using NarrativeProject.Floors;
 using System;
 
@@ -9,11 +10,15 @@ namespace NarrativeProject
         static void Main(string[] args)
         {
             var game = new Game();
+
             game.Add(new Lobby());
-            game.Add(new Elevator());
-            game.Add(new SecurityCloset());
+            game.Add(new Elevator1());
+            game.Add(new Corridor());
             game.Add(new Outside());
             game.Add(new FrontDesk());
+
+            game.Add(new Corridor());
+            game.Add(new Elevator2());
 
             while (!game.IsGameOver())
             {

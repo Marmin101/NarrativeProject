@@ -45,7 +45,7 @@ Or, you could try opening the [door] again.
                     {
                         Console.WriteLine("You slowly insert the shiny silver key into the door's keyhole and twist 50 degrees clockwise.");
                         Console.WriteLine("You hear a slight click, and the door unlocks.");
-                        Game.Transition<SecurityCloset>();
+                        Game.Transition<Corridor>();
                     }
                     else
                     {

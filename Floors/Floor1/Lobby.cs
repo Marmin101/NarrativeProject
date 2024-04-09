@@ -19,24 +19,24 @@ Behind you, there is the front door leading [outside].
             switch (choice)
             {
                 case "outside":
-                    // must collect key to outside to escape the hotel. key location tbd, somewhere on floor 6.
-                    if (Elevator.outsideKeyTaken /*this is just a placeholder for testing purposes*/)
+                    // must collect key to outside to escape the building. key location tbd, somewhere on floor 2.
+                    if (Elevator1.outsideKeyTaken /*this is just a placeholder for testing purposes*/)
                     {
                         Console.WriteLine("You insert the key and twist. The door unlocks, you step outside.");
                         Game.Transition<Outside>();
                     }
-                    else if (!Elevator.outsideKeyTaken && FrontDesk.securityKeyTaken)
+                    else if (!Elevator1.outsideKeyTaken && FrontDesk.securityKeyTaken)
                     {
                         Console.WriteLine("You try inserting that key you found at the front desk.");
-                        Console.WriteLine("Strangely, it does not work. Perhaps there's another key somewhere else?");
+                        Console.WriteLine("Strangely, it does not fit the lock. Perhaps there's another key somewhere else?");
                     }
-                    else if (!Elevator.outsideKeyTaken)
+                    else if (!Elevator1.outsideKeyTaken)
                     {
                         Console.WriteLine("The door to go outside is locked. Maybe there's a key somewhere in this building to open it?");
                     }
                     break;
                 case "door":
-                    if (!FrontDesk.securityKeyTaken) // if the security key is not collected
+                    if (!FrontDesk.securityKeyTaken)
                     {
                         Console.WriteLine("You approach the front desk and try opening the door behind it, but it is locked.");
                         Game.Transition<FrontDesk>();
@@ -49,7 +49,7 @@ Behind you, there is the front door leading [outside].
                     break;
                 case "elevator":
                     Console.WriteLine("You approach the elevator.");
-                    Game.Transition<Elevator>();
+                    Game.Transition<Elevator1>();
                     break;
                 default:
                     Console.WriteLine("Invalid command.");
