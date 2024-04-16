@@ -19,18 +19,17 @@ Behind you, there is the front door leading [outside].
             switch (choice)
             {
                 case "outside":
-                    // must collect key to outside to escape the building. key location tbd, somewhere on floor 2.
-                    if (Elevator1.outsideKeyTaken /*this is just a placeholder for testing purposes*/)
+                    if (Floor2.AccessRoom.outsideKeyTaken)
                     {
                         Console.WriteLine("You insert the key and twist. The door unlocks, you step outside.");
                         Game.Transition<Outside>();
                     }
-                    else if (!Elevator1.outsideKeyTaken && FrontDesk.securityKeyTaken)
+                    else if (!Floor2.AccessRoom.outsideKeyTaken && FrontDesk.securityKeyTaken)
                     {
                         Console.WriteLine("You try inserting that key you found at the front desk.");
                         Console.WriteLine("Strangely, it does not fit the lock. Perhaps there's another key somewhere else?");
                     }
-                    else if (!Elevator1.outsideKeyTaken)
+                    else if (!Floor2.AccessRoom.outsideKeyTaken)
                     {
                         Console.WriteLine("The door to go outside is locked. Maybe there's a key somewhere in this building to open it?");
                     }

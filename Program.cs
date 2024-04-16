@@ -13,11 +13,12 @@ namespace NarrativeProject
             // Floor 1
             game.Add(new Lobby());
             game.Add(new Elevator1());
-            game.Add(new SecurityCloset());
-            game.Add(new Outside());
             game.Add(new FrontDesk());
+            game.Add(new Outside());
+            game.Add(new SecurityCloset());
 
             // Floor 2
+            game.Add(new AccessRoom());
             game.Add(new Corridor());
             game.Add(new Elevator2());
             game.Add(new Poster());

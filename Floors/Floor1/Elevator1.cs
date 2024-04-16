@@ -9,7 +9,6 @@ namespace NarrativeProject.Floors.Floor1
 @"In the elevator, there are buttons to visit floor [1] and floor [2].
 Which floor will you visit? (You are on floor 1)
 ";
-        internal static bool outsideKeyTaken; // Temporary variable to store if the key was taken from the outside
         internal override void ReceiveChoice(string choice)
         {
             switch (choice)
@@ -19,8 +18,15 @@ Which floor will you visit? (You are on floor 1)
                     Game.Transition<Lobby>();
                     break;
                 case "2":
-                    Console.WriteLine("You enter the second floor.");
-                    Game.Transition<Floor2.Corridor>();
+                    if (SecurityCloset.elevatorPass)
+                    {
+                        Console.WriteLine("You enter the second floor.");
+                        Game.Transition<Floor2.Corridor>();
+                    }
+                    else
+                    {
+                        Console.WriteLine("The elevator requires a keycard to access the second floor.");
+                    }
                     break;
                 default:
                     Console.WriteLine("Invalid command.");

@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Floors\Floor1\FrontDesk.cs" />
+    <Compile Include="Floors\Floor2\AccessRoom.cs" />
     <Compile Include="Floors\Floor2\Telephone.cs" />
     <Compile Include="Floors\Floor2\Poster.cs" />
     <Compile Include="Floors\Floor2\Corridor.cs" />

@@ -30,8 +30,26 @@ You see a door to your [left] and a door to your [right].
                     Game.Transition<Telephone>();
                     break;
                 case "left":
+                    if (Telephone.whichDoor == "left")
+                    {
+                        Console.WriteLine("You open the door to the left.");
+                        Game.Transition<AccessRoom>();
+                    }
+                    else
+                    {
+                        Console.WriteLine("The door is locked.");
+                    }
                     break;
                 case "right":
+                    if (Telephone.whichDoor == "right")
+                    {
+                        Console.WriteLine("You open the door to the right.");
+                        Game.Transition<AccessRoom>();
+                    }
+                    else
+                    {
+                        Console.WriteLine("The door is locked.");
+                    }
                     break;
                 default:
                     Console.WriteLine("Invalid command.");

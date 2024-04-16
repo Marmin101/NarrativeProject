@@ -36,7 +36,7 @@ namespace NarrativeProject.Floors.Floor2
                 Random rand = new Random();
                 int index = rand.Next(choices.Length);
                 whichDoor = choices[index];
-                Console.WriteLine(" | v o i c e : " + '"' + "The " + whichDoor + " door. It opens." + '"');
+                Console.WriteLine(" | v o i c e : " + '"' + "The " + whichDoor + " door. It now opens." + '"');
                 System.Threading.Thread.Sleep(1500);
                 Console.Write(".");
                 System.Threading.Thread.Sleep(1500);

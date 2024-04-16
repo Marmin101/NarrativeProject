@@ -6,24 +6,18 @@ namespace NarrativeProject.Floors.Floor1
     {
 
         internal override string CreateDescription() =>
-@"You are outside.
+@"You are outside. Finally, the taste of fresh air.
+
+
+
+
+Enter any key to continue.
 ";
 
         internal override void ReceiveChoice(string choice)
         {
-            switch (choice)
-            {
-                case "bedroom":
-                    Console.WriteLine("You return to your bedroom.");
-                    Game.Transition<Lobby>();
-                    break;
-                case "couch":
-                    Console.WriteLine("You sit on the couch and fall asleep.");
+            { 
                     Game.Finish();
-                    break;
-                default:
-                    Console.WriteLine("Invalid command.");
-                    break;
             }
         }
     }

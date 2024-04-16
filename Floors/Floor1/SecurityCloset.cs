@@ -4,7 +4,7 @@ namespace NarrativeProject.Floors.Floor1
 {
     internal class SecurityCloset : Room
     {
-        internal static bool isKeyCollected;
+        internal static bool elevatorPass;
 
         internal override string CreateDescription() =>
 @"You are in the Security Closet.
@@ -21,10 +21,10 @@ You see a [desk] with stuff on it.
                     Game.Transition<Lobby>();
                     break;
                 case "desk":
-                    if (!isKeyCollected)
+                    if (!elevatorPass)
                     {
                     Console.WriteLine("On the desk, you see a keycard. You decide to take it.");
-                    isKeyCollected = true;
+                    elevatorPass = true;
                     }
                     else
                     {
