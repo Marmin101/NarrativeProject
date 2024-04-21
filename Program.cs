@@ -24,11 +24,13 @@ namespace NarrativeProject
             game.Add(new Poster());
             game.Add(new Telephone());
 
+
             while (!game.IsGameOver())
             {
                 Console.WriteLine("--");
                 Console.WriteLine(game.CurrentRoomDescription);
                 Console.WriteLine("ENERGY: " + Game.energy);
+                Console.WriteLine("INVENTORY: [i]");
                 Console.WriteLine("--");
                 Game.Energy();
                 string choice = Console.ReadLine().ToLower() ?? "";

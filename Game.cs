@@ -7,6 +7,9 @@ namespace NarrativeProject
     {
         List<Room> rooms = new List<Room>();
         Room currentRoom;
+
+        public static List<string> inventory = new List<string>();
+
         internal bool IsGameOver() => isFinished;
         static bool isFinished;
         static string nextRoom = "";
@@ -59,6 +62,41 @@ namespace NarrativeProject
                 Game.Finish();
                 Console.WriteLine("Game over.\nPress Enter to exit.");
             }
+        }
+
+        public static void AddItem(string item)
+        {
+            inventory.Add(item);
+            Console.WriteLine("(+1 " + item + ")");
+        }
+        public static void RemoveItem(string item) 
+        { 
+            inventory.Remove(item); 
+            Console.WriteLine("(-1 " + item + ")");
+        }
+        public static void ShowInventory()
+        {
+            Console.WriteLine("INVENTORY\n---------");
+            if (inventory.Count > 0)
+            {
+                for (int i = 0; i < inventory.Count - 1; i++)
+                {
+                    Console.WriteLine(inventory[i]);
+                    if (i == inventory.Count - 1) 
+                    {
+                        Console.WriteLine(".");
+                    }
+                    else 
+                    { 
+                        Console.WriteLine(", "); 
+                    }
+                }
+            }
+            else
+            {
+                Console.WriteLine("Empty");
+            }
+
         }
 
         internal void CheckTransition()

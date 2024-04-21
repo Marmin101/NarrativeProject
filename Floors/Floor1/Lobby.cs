@@ -18,6 +18,9 @@ Behind you, there is the front door leading [outside].
         {
             switch (choice)
             {
+                case "i":
+                    Game.ShowInventory();
+                    break;
                 case "outside":
                     if (Floor2.AccessRoom.outsideKeyTaken)
                     {

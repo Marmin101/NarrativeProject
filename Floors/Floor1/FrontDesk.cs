@@ -19,6 +19,9 @@ Or, you could try opening the [door] again.
         {
             switch (choice)
             {
+                case "i":
+                    Game.ShowInventory();
+                    break;
                 case "lobby":
                     Console.WriteLine("You slowly head back to where you started, hitting yourself in the head on the way.");
                     Game.Transition<Lobby>();
@@ -27,12 +30,15 @@ Or, you could try opening the [door] again.
                     if (!mirrorMoved)
                     {
                         Console.WriteLine("You grab the mirror off the desk to inspect your imperfections up closely.");
+                        Game.AddItem("mirror");
                         mirrorMoved = true;
                         Console.WriteLine("You place the mirror back on the desk.");
+                        Game.RemoveItem("mirror");
                     }
                     else if (mirrorMoved && !securityKeyTaken)
                     {
-                        Console.WriteLine("Beside the mirror, you notice a shiny silver key. You take it.");
+                        Console.WriteLine("Looking back at the mirror, you notice a shiny silver key beside it. You take it.");
+                        Game.AddItem("shiny silver key");
                         securityKeyTaken = true;
                     }
                     else

@@ -16,6 +16,9 @@ You see a [desk] with stuff on it.
         {
             switch (choice)
             {
+                case "i":
+                    Game.ShowInventory();
+                    break;
                 case "lobby":
                     Console.WriteLine("You return to the lobby and close the door behind you.");
                     Game.Transition<Lobby>();
