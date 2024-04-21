@@ -35,7 +35,8 @@ Or, you could try opening the [door] again.
                         Console.WriteLine("You place the mirror back on the desk.");
                         Game.RemoveItem("mirror");
                     }
-                    else if (mirrorMoved && !securityKeyTaken)
+                    //else if (mirrorMoved && !securityKeyTaken)
+                    else if (mirrorMoved && !Game.inventory.Contains("shiny silver key"))
                     {
                         Console.WriteLine("Looking back at the mirror, you notice a shiny silver key beside it. You take it.");
                         Game.AddItem("shiny silver key");
@@ -47,8 +48,10 @@ Or, you could try opening the [door] again.
                     }
                     break;
                 case "door":
-                    if (securityKeyTaken)
+                    //if (securityKeyTaken)
+                    if (Game.inventory.Contains("shiny silver key"))
                     {
+                        Game.RemoveItem("shiny silver key");
                         Console.WriteLine("You slowly insert the shiny silver key into the door's keyhole and twist 50 degrees clockwise.");
                         Console.WriteLine("You hear a slight click, and the door unlocks.");
                         Game.Transition<SecurityCloset>();

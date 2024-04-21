@@ -22,23 +22,27 @@ Behind you, there is the front door leading [outside].
                     Game.ShowInventory();
                     break;
                 case "outside":
-                    if (Floor2.AccessRoom.outsideKeyTaken)
+                    //if (Floor2.AccessRoom.outsideKeyTaken)
+                    if (Game.inventory.Contains("gold key"))
                     {
                         Console.WriteLine("You insert the key and twist. The door unlocks, you step outside.");
                         Game.Transition<Outside>();
                     }
-                    else if (!Floor2.AccessRoom.outsideKeyTaken && FrontDesk.securityKeyTaken)
+                    //else if (!Floor2.AccessRoom.outsideKeyTaken && FrontDesk.securityKeyTaken)
+                    else if (!Game.inventory.Contains("gold key") && Game.inventory.Contains("shiny silver key"))
                     {
                         Console.WriteLine("You try inserting that key you found at the front desk.");
                         Console.WriteLine("Strangely, it does not fit the lock. Perhaps there's another key somewhere else?");
                     }
-                    else if (!Floor2.AccessRoom.outsideKeyTaken)
+                    //else if (!Floor2.AccessRoom.outsideKeyTaken)
+                    else if (!Game.inventory.Contains("gold key"))
                     {
                         Console.WriteLine("The door to go outside is locked. Maybe there's a key somewhere in this building to open it?");
                     }
                     break;
                 case "door":
-                    if (!FrontDesk.securityKeyTaken)
+                    //if (!FrontDesk.securityKeyTaken)
+                    if (!Game.inventory.Contains("shiny silver key"))
                     {
                         Console.WriteLine("You approach the front desk and try opening the door behind it, but it is locked.");
                         Game.Transition<FrontDesk>();

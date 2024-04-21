@@ -21,7 +21,8 @@ Which floor will you visit? (You are on floor 1)
                     Game.Transition<Lobby>();
                     break;
                 case "2":
-                    if (SecurityCloset.elevatorPass)
+                    //if (SecurityCloset.elevatorPass)
+                    if (Game.inventory.Contains("keycard"))
                     {
                         Console.WriteLine("You enter the second floor.");
                         Game.Transition<Floor2.Corridor>();

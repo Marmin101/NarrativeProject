@@ -16,6 +16,9 @@ Or, you could walk back to the [corridor].
         {
             switch (choice)
             {
+                case "i":
+                    Game.ShowInventory();
+                    break;
                 case "corridor":
                     Console.WriteLine("You return to the corridor.");
                     Game.Transition<Corridor>();

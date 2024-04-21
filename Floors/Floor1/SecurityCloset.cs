@@ -24,9 +24,11 @@ You see a [desk] with stuff on it.
                     Game.Transition<Lobby>();
                     break;
                 case "desk":
-                    if (!elevatorPass)
+                    //if (!elevatorPass)
+                    if (!Game.inventory.Contains("keycard"))
                     {
                     Console.WriteLine("On the desk, you see a keycard. You decide to take it.");
+                    Game.AddItem("keycard");
                     elevatorPass = true;
                     }
                     else

@@ -16,6 +16,9 @@ You can also return to the [corridor].
         {
             switch (choice)
             {
+                case "i":
+                    Game.ShowInventory();
+                    break;
                 case "corridor":
                     Console.WriteLine("You return to the corridor.");
                     Game.Transition<Corridor>();
@@ -28,6 +31,7 @@ You can also return to the [corridor].
                     Console.WriteLine("(+5 energy)");
                     System.Threading.Thread.Sleep(1000);
                     Console.WriteLine("You take the key.");
+                    Game.AddItem("gold key");
                     outsideKeyTaken = true;
                     break;
                 default:

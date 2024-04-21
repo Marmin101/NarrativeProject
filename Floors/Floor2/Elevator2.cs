@@ -13,6 +13,9 @@ Which floor will you visit? (You are on floor 2)
         {
             switch (choice)
             {
+                case "i":
+                    Game.ShowInventory();
+                    break;
                 case "1":
                     Console.WriteLine("You enter the lobby.");
                     Game.Transition<Floor1.Lobby>();

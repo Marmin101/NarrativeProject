@@ -67,29 +67,24 @@ namespace NarrativeProject
         public static void AddItem(string item)
         {
             inventory.Add(item);
-            Console.WriteLine("(+1 " + item + ")");
+            Console.WriteLine("(+ " + item + ")");
         }
         public static void RemoveItem(string item) 
         { 
+            if (inventory.Contains(item))
+            {
             inventory.Remove(item); 
-            Console.WriteLine("(-1 " + item + ")");
+            Console.WriteLine("(- " + item + ")");
+            }
         }
         public static void ShowInventory()
         {
             Console.WriteLine("INVENTORY\n---------");
             if (inventory.Count > 0)
             {
-                for (int i = 0; i < inventory.Count - 1; i++)
+                for (int i = 0; i < inventory.Count; i++)
                 {
-                    Console.WriteLine(inventory[i]);
-                    if (i == inventory.Count - 1) 
-                    {
-                        Console.WriteLine(".");
-                    }
-                    else 
-                    { 
-                        Console.WriteLine(", "); 
-                    }
+                    Console.WriteLine(" * " + inventory[i]);
                 }
             }
             else
