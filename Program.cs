@@ -28,13 +28,15 @@ namespace NarrativeProject
             {
                 Console.WriteLine("--");
                 Console.WriteLine(game.CurrentRoomDescription);
+                Console.WriteLine("ENERGY: " + Game.energy);
+                Console.WriteLine("--");
+                Game.Energy();
                 string choice = Console.ReadLine().ToLower() ?? "";
                 Console.Clear();
                 game.ReceiveChoice(choice);
             }
 
             Console.WriteLine("END");
-            Console.ReadLine();
         }
     }
 }

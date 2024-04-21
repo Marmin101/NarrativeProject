@@ -31,6 +31,8 @@ namespace NarrativeProject.Floors.Floor2
                 Console.WriteLine("You hear a click and a muffled voice answers.");
                 System.Threading.Thread.Sleep(2750);
                 Console.WriteLine(" | v o i c e : " + '"' + "I've left you a gift." + '"');
+                Game.energy += 5;
+                Console.WriteLine("(+5 energy)");
                 System.Threading.Thread.Sleep(2000);
                 string[] choices = new string[] { "left", "right" };
                 Random rand = new Random();

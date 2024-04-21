@@ -24,7 +24,9 @@ You can also return to the [corridor].
                     Console.WriteLine("The bed stands out to you, catching a glimpse of a reflective something from the little amount of light entering the room.");
                     System.Threading.Thread.Sleep(2000);
                     Console.WriteLine("You walk up to the bed and find a gold key.");
-                    System.Threading.Thread.Sleep(300);
+                    Game.energy += 5;
+                    Console.WriteLine("(+5 energy)");
+                    System.Threading.Thread.Sleep(1000);
                     Console.WriteLine("You take the key.");
                     outsideKeyTaken = true;
                     break;

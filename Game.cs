@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace NarrativeProject
 {
@@ -9,6 +10,7 @@ namespace NarrativeProject
         internal bool IsGameOver() => isFinished;
         static bool isFinished;
         static string nextRoom = "";
+        public static int energy = 100;
 
         internal void Add(Room room)
         {
@@ -30,11 +32,33 @@ namespace NarrativeProject
         internal static void Transition<T>() where T : Room
         {
             nextRoom = typeof(T).Name;
+            energy -= 5;
         }
 
         internal static void Finish()
         {
             isFinished = true;
+        }
+
+        internal static void Energy()
+        {
+            if (Game.energy > 100)
+            {
+                Game.energy = 100;
+            }
+            if (Game.energy <= 0)
+            {
+                Console.Clear();
+                Game.energy = 0;
+                Console.WriteLine("ENERGY: " + energy);
+                Console.WriteLine("--");
+                Console.WriteLine("You have run out of energy.");
+                Console.WriteLine("Press any key to continue.");
+                Console.ReadKey();
+                Console.Clear();
+                Game.Finish();
+                Console.WriteLine("Game over.\nPress Enter to exit.");
+            }
         }
 
         internal void CheckTransition()
