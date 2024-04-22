@@ -1,6 +1,8 @@
 ﻿using NarrativeProject.Floors.Floor1;
 using NarrativeProject.Floors.Floor2;
 using System;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace NarrativeProject
 {
@@ -8,6 +10,7 @@ namespace NarrativeProject
     {
         static void Main(string[] args)
         {
+            
             var game = new Game();
 
             // Floor 1
