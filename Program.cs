@@ -37,6 +37,15 @@ namespace NarrativeProject
                 Console.WriteLine("--");
                 Game.Energy();
                 string choice = Console.ReadLine().ToLower() ?? "";
+                switch (choice)
+                {
+                    case "save":
+                        game.SaveGame();
+                        break;
+                    case "load":
+                        game.LoadGame();
+                        break;
+                }
                 Console.Clear();
                 game.ReceiveChoice(choice);
             }

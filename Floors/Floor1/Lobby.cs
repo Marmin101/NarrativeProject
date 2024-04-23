@@ -21,6 +21,9 @@ Behind you, there is the front door leading [outside].
                 case "i":
                     Game.ShowInventory();
                     break;
+                case "s":
+                    Game.SaveGame<Lobby>();
+                    break;
                 case "outside":
                     //if (Floor2.AccessRoom.outsideKeyTaken)
                     if (Game.inventory.Contains("gold key"))

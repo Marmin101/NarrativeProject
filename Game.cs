@@ -28,8 +28,19 @@ namespace NarrativeProject
 
         internal void ReceiveChoice(string choice)
         {
-            currentRoom.ReceiveChoice(choice);
-            CheckTransition();
+            switch (choice)
+            {
+                case "save":
+                    SaveGame();
+                    break;
+                case "load":
+                    LoadGame();
+                    break;
+                default:
+                    currentRoom.ReceiveChoice(choice);
+                    CheckTransition();
+                    break;
+            }
         }
 
         internal static void Transition<T>() where T : Room
@@ -105,6 +116,26 @@ namespace NarrativeProject
                     break;
                 }
             }
+        }
+
+        internal static void SaveGame<T>() where T : Room
+        {
+            throw new NotImplementedException();
+        }
+
+        public void SaveGame()
+        {
+            Console.WriteLine(currentRoom.GetType().Name); // Current room
+            Console.WriteLine(energy); // Energy
+            foreach (var item in inventory) // All inventory items
+            {
+                Console.WriteLine(item);
+            }
+        }
+
+        public void LoadGame()
+        {
+            ygby7gby7b7bt7b7
         }
     }
 }
