@@ -19,9 +19,6 @@ Or, you could try opening the [door] again.
         {
             switch (choice)
             {
-                case "i":
-                    Game.ShowInventory();
-                    break;
                 case "lobby":
                     Console.WriteLine("You slowly head back to where you started, hitting yourself in the head on the way.");
                     Game.Transition<Lobby>();

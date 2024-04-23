@@ -1,10 +1,14 @@
-﻿using System;
+﻿using NarrativeProject.Floors.Floor1;
+using System;
+using System.IO;
 using System.Collections.Generic;
 
 namespace NarrativeProject
 {
     internal class Game
     {
+        const string SaveFile = "SaveData.txt";
+
         List<Room> rooms = new List<Room>();
         Room currentRoom;
 
@@ -36,13 +40,18 @@ namespace NarrativeProject
                 case "load":
                     LoadGame();
                     break;
+                case "i":
+                    ShowInventory();
+                    break;
+                case "quit":
+                    Finish();
+                    break;
                 default:
                     currentRoom.ReceiveChoice(choice);
                     CheckTransition();
                     break;
             }
         }
-
         internal static void Transition<T>() where T : Room
         {
             nextRoom = typeof(T).Name;
@@ -125,17 +134,37 @@ namespace NarrativeProject
 
         public void SaveGame()
         {
-            Console.WriteLine(currentRoom.GetType().Name); // Current room
-            Console.WriteLine(energy); // Energy
+            FileStream saveStream;
+            saveStream = File.OpenWrite(SaveFile);
+            StreamWriter saveWriter = new StreamWriter(saveStream);
+            saveWriter.WriteLine(currentRoom.GetType().Name); // Current room
+            saveWriter.WriteLine(energy); // Energy
             foreach (var item in inventory) // All inventory items
             {
-                Console.WriteLine(item);
+                saveWriter.WriteLine(item);
             }
+            saveWriter.Close();
+            saveStream.Close();
+            Console.WriteLine("Game saved.");
         }
 
         public void LoadGame()
         {
-            ygby7gby7b7bt7b7
+            FileStream saveStream;
+            saveStream = File.OpenRead(SaveFile);
+            StreamReader saveReader = new StreamReader(saveStream);
+            string roomName = saveReader.ReadLine();
+            energy = int.Parse(saveReader.ReadLine());
+            inventory.Clear();
+            while (!saveReader.EndOfStream)
+            {
+                inventory.Add(saveReader.ReadLine());
+            }
+            saveReader.Close();
+            saveStream.Close();
+            nextRoom = roomName;
+            CheckTransition();
+            Console.WriteLine("Game loaded.");
         }
     }
 }

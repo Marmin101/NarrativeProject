@@ -53,9 +53,6 @@ namespace NarrativeProject.Floors.Floor2
             {
                 switch (choice)
                 {
-                    case "i":
-                        Game.ShowInventory();
-                        break;
                     case "hang up":
                         Console.WriteLine("You return to the corridor.");
                         Game.Transition<Corridor>();

@@ -17,9 +17,6 @@ You see a door to your [left] and a door to your [right].
         {
             switch (choice)
             {
-                case "i":
-                    Game.ShowInventory();
-                    break;
                 case "elevator":
                     Console.WriteLine("You return to the elevator.");
                     Game.Transition<Elevator2>();

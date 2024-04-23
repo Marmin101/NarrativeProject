@@ -33,7 +33,7 @@ namespace NarrativeProject
                 Console.WriteLine("--");
                 Console.WriteLine(game.CurrentRoomDescription);
                 Console.WriteLine("ENERGY: " + Game.energy);
-                Console.WriteLine("INVENTORY: [i]");
+                Console.WriteLine("INVENTORY: [i]   SAVE GAME: [save]   LOAD GAME: [load]   QUIT GAME: [quit]");
                 Console.WriteLine("--");
                 Game.Energy();
                 string choice = Console.ReadLine().ToLower() ?? "";
